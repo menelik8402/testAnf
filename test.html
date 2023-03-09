@@ -32,9 +32,29 @@
          <br>
          <button v-on:click="addUser">Add User</button>
 <br>
-         {{userList}}
+        
          </CENTER>
          
+         <div align='left'>
+         <TABLE BORDER>
+         
+            <TR>
+               <TD>Name </TD>
+               <TD>Surname </TD>
+               <TD>Age </TD>
+               <TD>Sex </TD>
+               <TD>Email </TD>
+
+             <TR v-for="user of userList">  
+               <TD> <INPUT TYPE="text" NAME="nombre" SIZE=8 MAXLENGTH=10 v-model="user.name" readonly> </TD>
+                  <TD> <INPUT TYPE="text" NAME="appellidos" SIZE=15 MAXLENGTH=20 v-model="user.surname" readonly> </TD>
+                     <TD> <INPUT TYPE="text" NAME="nombre" SIZE=8 MAXLENGTH=10 v-model="user.age" readonly> </TD>
+                        <TD> <INPUT TYPE="text" NAME="nombre" SIZE=8 MAXLENGTH=10 v-model="user.sex" readonly> </TD>
+                           <TD> <INPUT TYPE="text" NAME="nombre" SIZE=20 MAXLENGTH=25 v-model="user.email" readonly> </TD>
+                    
+          </TABLE>  
+                   
+         </div>
       
     </div>  
 

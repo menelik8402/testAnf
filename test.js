@@ -16,7 +16,13 @@ createApp({
   methods : {
       addUser (){
           this.userList.push({name:this.name,surname:this.surname,
-                            age:this.age,sex:this.sex,email:this.email})
+                            age:this.age,sex:this.sex,email:this.email});
+
+        this.name = '';
+        this.surname = '';
+        this.age  = 0;
+        this.sex = '';
+        this.email = '';
       }
   }
 }).mount('#app')
