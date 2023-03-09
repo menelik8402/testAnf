@@ -15,8 +15,9 @@ createApp({
       contPerMale : 0, 
       contPerFamele : 0,
       younguestPerson : 0,
-      olderPerson : 0
-
+      olderPerson : 0,
+      inputName : '',
+      nationality : ''
     }
   },
   methods : {
@@ -55,7 +56,21 @@ createApp({
           this.younguestPerson = sortResult[this.userList.length-1].name;
           this.olderPerson = sortResult[0].name;
 
-      }    
+      },
+      async userNationatity(){
+        const url = "https://api.nationalize.io/?name=" + this.inputName;
+        const r = await fetch(url);
+        const jsonresult = await r.json();
+
+       // this.nationality = country;
+       const sortResult = jsonresult.country.sort((a,b) =>{
+        return Number.parseInt(b.probability) - Number.parseInt(a.probability)
+      });
+      
+      this.nationality = sortResult[0].country_id;
+
+
+      }   
       
   }
 }).mount('#app')

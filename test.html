@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anf test</title>
 </head>
+<style>
+   @media screen and (max-width: 600px) {
+  
+  .priority{display:none;}
+}
+
+</style>
 <body>
    <div id="app">
       
@@ -16,8 +23,8 @@
          
          <TR>
             <TD>Nombre:</TD>
-            <TD> <INPUT TYPE="text" NAME="nombre" SIZE=18 MAXLENGTH=18 v-model="name" > Edad :
-                  <INPUT TYPE="text" NAME="edad" SIZE=8 MAXLENGTH=8 v-model="age"> Sexo: 
+            <TD> <INPUT TYPE="text" NAME="nombre" SIZE=18 MAXLENGTH=18 v-model="name" > <span class="priority">Edad :</span>
+                  <INPUT class="priority" TYPE="text" NAME="edad" SIZE=8 MAXLENGTH=8 v-model="age"> Sexo: 
                   <select NAME="sexo" v-model="sex">
 
                         <option>Famele</option>
@@ -29,7 +36,7 @@
                   
                   </TD>
          
-         <TR>
+         <TR class="priority">
             <TD>Apellidos:</TD>
             <TD> <INPUT TYPE="text" NAME="apellidos" SIZE=48 MAXLENGTH=48 v-model="surname"></TD>
          
@@ -41,53 +48,66 @@
          </TABLE>
          <br>
          <button v-on:click="addUser">Add User</button>
-<br>
+      <br>
         
          </CENTER>
-         
-         <div align='left'>
-         <TABLE BORDER>
-         
-            <TR>
-               <TD>Name </TD>
-               <TD>Surname </TD>
-               <TD>Age </TD>
-               <TD>Sex </TD>
-               <TD>Email </TD>
-
-             <TR v-for="user of userList">  
-               <TD> <INPUT TYPE="text" NAME="nombre" SIZE=8 MAXLENGTH=10 v-model="user.name" readonly> </TD>
-                  <TD> <INPUT TYPE="text" NAME="appellidos" SIZE=15 MAXLENGTH=20 v-model="user.surname" readonly> </TD>
-                     <TD> <INPUT TYPE="text" NAME="nombre" SIZE=8 MAXLENGTH=10 v-model="user.age" readonly> </TD>
-                        <TD> <INPUT TYPE="text" NAME="nombre" SIZE=8 MAXLENGTH=10 v-model="user.sex" readonly> </TD>
-                           <TD> <INPUT TYPE="text" NAME="nombre" SIZE=20 MAXLENGTH=25 v-model="user.email" readonly> </TD>
-                    
-          </TABLE>  
-                   
-         </div>
-
-         <div align='right'>
-            <TABLE BORDER>
+      
             
-               <TR>
-                  <TD>Avg age </TD>
-                  <TD>Tot. Male </TD>
-                  <TD>Tot. Famele </TD>
-                  <TD>Young Person </TD>
-                  <TD>Old Person </TD>
+
+            
+<HR></HR>
+
+<TABLE BORDER="0">
+         
+         <TR>
+            <td WIDTH="450PX"><div align='left'>
+               <TABLE BORDER>
+               
+                  <TR>
+                     <TD>Name </TD>
+                     <TD>Surname </TD>
+                     <TD>Age </TD>
+                     <TD>Sex </TD>
+                     <TD>Email </TD>
    
-                <TR>  
-                  <TD> {{totAge}}</TD>
-                  <TD> {{contPerMale}} </TD>
-                  <TD> {{contPerFamele}} </TD>
-                  <TD> {{younguestPerson}} </TD>
-                  <TD> {{olderPerson}} </TD>
-                     
-                     
-                       
-             </TABLE>  
-                      
-            </div>
+                  <TR v-for="user of userList">  
+                     <TD> <INPUT TYPE="text" NAME="nombre" SIZE=8 MAXLENGTH=10 v-model="user.name" readonly> </TD>
+                        <TD> <INPUT TYPE="text" NAME="appellidos" SIZE=15 MAXLENGTH=20 v-model="user.surname" readonly> </TD>
+                           <TD> <INPUT TYPE="text" NAME="nombre" SIZE=8 MAXLENGTH=10 v-model="user.age" readonly> </TD>
+                              <TD> <INPUT TYPE="text" NAME="nombre" SIZE=8 MAXLENGTH=10 v-model="user.sex" readonly> </TD>
+                                 <TD> <INPUT TYPE="text" NAME="nombre" SIZE=20 MAXLENGTH=25 v-model="user.email" readonly> </TD>
+                        
+               </TABLE>  
+                        
+               </div></td>
+            <td WITH="450 PX"><div align='right'>
+               <TABLE BORDER>
+               
+                  <TR>
+                     <TD>Avg age </TD>
+                     <TD>Tot. Male </TD>
+                     <TD>Tot. Famele </TD>
+                     <TD>Young Person </TD>
+                     <TD>Old Person </TD>
+      
+                  <TR>  
+                     <TD> {{totAge}}</TD>
+                     <TD> {{contPerMale}} </TD>
+                     <TD> {{contPerFamele}} </TD>
+                     <TD> {{younguestPerson}} </TD>
+                     <TD> {{olderPerson}} </TD>
+                  <TR>
+                     <TD colspan="2"> <INPUT TYPE="text" NAME="nationality" SIZE=20 MAXLENGTH=20 required placeholder="Enter a person name" v-model="inputName"> </TD>
+                     <TD><button v-on:click="userNationatity">Nationality</button> </TD>
+                     <TD colspan="2">{{nationality}} </TD>      
+                        
+                        
+               </TABLE>  
+                        
+            </div></td>
+            </TR>
+            </TABLE>
+         
       
     </div>  
 
