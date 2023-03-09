@@ -4,34 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Anf test</title>
 </head>
 <body>
-    <FORM ACTION="" METHOD=POST>
+   <div id="app">
+      
 
-        <CENTER>
-        <TABLE BORDER>
-        
-        <TR>
-           <TD>Nombre:</TD>
-           <TD> <INPUT TYPE="text" NAME="nombre" SIZE=18 MAXLENGTH=18> Edad :
-                <INPUT TYPE="text" NAME="edad" SIZE=8 MAXLENGTH=8> Sexo: 
-                <INPUT TYPE="text" NAME="dni" SIZE=8 MAXLENGTH=8></TD>
-        
-        <TR>
-           <TD>Apellidos:</TD>
-           <TD> <INPUT TYPE="text" NAME="apellidos" SIZE=48 MAXLENGTH=48></TD>
-        
-        <TR>
-           <TD>Correo electronico:</TD>
-           <TD> <INPUT TYPE="text" NAME="domicilio" SIZE=48 MAXLENGTH=48></TD>
-        
-                  
-        </TABLE>
-        </CENTER>
-        </FORM>
+         <CENTER>
+         <TABLE BORDER>
+         
+         <TR>
+            <TD>Nombre:</TD>
+            <TD> <INPUT TYPE="text" NAME="nombre" SIZE=18 MAXLENGTH=18 v-model="name" > Edad :
+                  <INPUT TYPE="text" NAME="edad" SIZE=8 MAXLENGTH=8 v-model="age"> Sexo: 
+                  <INPUT TYPE="text" NAME="sexo" SIZE=8 MAXLENGTH=8 v-model="sex"></TD>
+         
+         <TR>
+            <TD>Apellidos:</TD>
+            <TD> <INPUT TYPE="text" NAME="apellidos" SIZE=48 MAXLENGTH=48 v-model="surname"></TD>
+         
+         <TR>
+            <TD>Correo electronico:</TD>
+            <TD> <INPUT TYPE="text" NAME="domicilio" SIZE=48 MAXLENGTH=48 v-model="email"></TD>
+         
+                     
+         </TABLE>
+         <br>
+         <button v-on:click="addUser">Add User</button>
+<br>
+         {{userList}}
+         </CENTER>
+         
+      
+    </div>  
 
    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.47/dist/vue.global.min.js"></script>
-  <script src="user.js"></script>
+  <script src="test.js"></script>
 </body>
 </html>
