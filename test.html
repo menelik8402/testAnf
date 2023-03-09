@@ -9,6 +9,7 @@
 <body>
    <div id="app">
       
+   
 
          <CENTER>
          <TABLE BORDER>
@@ -17,7 +18,16 @@
             <TD>Nombre:</TD>
             <TD> <INPUT TYPE="text" NAME="nombre" SIZE=18 MAXLENGTH=18 v-model="name" > Edad :
                   <INPUT TYPE="text" NAME="edad" SIZE=8 MAXLENGTH=8 v-model="age"> Sexo: 
-                  <INPUT TYPE="text" NAME="sexo" SIZE=8 MAXLENGTH=8 v-model="sex"></TD>
+                  <select NAME="sexo" v-model="sex">
+
+                        <option>Famele</option>
+                        
+                        <option selected>Male</option>       
+                        
+                        
+                        </select>
+                  
+                  </TD>
          
          <TR>
             <TD>Apellidos:</TD>
@@ -55,6 +65,29 @@
           </TABLE>  
                    
          </div>
+
+         <div align='right'>
+            <TABLE BORDER>
+            
+               <TR>
+                  <TD>Avg age </TD>
+                  <TD>Tot. Male </TD>
+                  <TD>Tot. Famele </TD>
+                  <TD>Young Person </TD>
+                  <TD>Old Person </TD>
+   
+                <TR>  
+                  <TD> {{totAge}}</TD>
+                  <TD> {{contPerMale}} </TD>
+                  <TD> {{contPerFamele}} </TD>
+                  <TD> {{younguestPerson}} </TD>
+                  <TD> {{olderPerson}} </TD>
+                     
+                     
+                       
+             </TABLE>  
+                      
+            </div>
       
     </div>  
 
